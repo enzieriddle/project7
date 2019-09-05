@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  background-color: #ffc2c2;
+  height: 50px;
+}
