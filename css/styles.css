@@ -3,12 +3,16 @@
   box-sizing: border-box;
 }
 
+header {
+  background-color: #ffd1d1;
+}
+
 ul {
   list-style: none;
 }
 
 img {
-  background-color: #ffc2c2;
+  background-color: #ffdede;
   height: 50px;
 }
 
@@ -46,7 +50,7 @@ img[src="icons/icon-settings.svg"] {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: 100px;
   grid-gap: 20px;
   grid-template-areas:
     "head icon-bell"
