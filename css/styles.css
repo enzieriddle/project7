@@ -42,8 +42,9 @@ img[src="icons/icon-settings.svg"] {
   grid-area: icon-settings;
 }
 
-.dashboard-widgets {
-  grid-area: dashboard-widgets;
+.main {
+  grid-area: main;
+  background-color: #fff0f0;
 }
 
 .grid {
@@ -51,11 +52,11 @@ img[src="icons/icon-settings.svg"] {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 100px;
-  grid-gap: 20px;
+  grid-gap: 10px;
   grid-template-areas:
     "head icon-bell"
-    "icon-dashboard dashboard-widgets"
-    "icon-members dashboard-widgets"
-    "icon-visits dashboard-widgets"
-    "icon-settings dashboard-widgets";
+    "icon-dashboard main"
+    "icon-members main"
+    "icon-visits main"
+    "icon-settings main";
 }
