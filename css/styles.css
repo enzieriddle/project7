@@ -4,7 +4,7 @@
 }
 
 header {
-  background-color: #ffd1d1;
+  background-color: #ffb5b5;
 }
 
 ul {
@@ -17,46 +17,95 @@ img {
 }
 
 /* Grid Area --------------------------*/
-
-h1 {
-  grid-area: head;
-}
-
-img[src="icons/icon-bell.svg"] {
-  grid-area: icon-bell;
-}
-
-img[src="icons/icon-dashboard.svg"] {
-  grid-area: icon-dashboard;
-}
-
-img[src="icons/icon-members.svg"] {
-  grid-area: icon-members;
-}
-
-img[src="icons/icon-visits.svg"] {
-  grid-area: icon-visits;
-}
-
-img[src="icons/icon-settings.svg"] {
-  grid-area: icon-settings;
-}
-
-.main {
-  grid-area: main;
-  background-color: #fff0f0;
-}
-
-.grid {
-  height: 100vh;
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 100px;
-  grid-gap: 10px;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
   grid-template-areas:
-    "head icon-bell"
-    "icon-dashboard main"
-    "icon-members main"
-    "icon-visits main"
-    "icon-settings main";
+    "header"
+    "main-nav"
+    "main-content";
+}
+
+header {
+  grid-area: header;
+}
+
+.social-container {
+  background-color: #ffe8e8;
+}
+
+.main-nav {
+  grid-area: main-nav;
+  background-color: #ffc4c4;
+}
+
+.main-content {
+  display: grid;
+  grid-area: main-content;
+  background-color: #ffd9d9;
+}
+
+.social-image {
+  height: 50px;
+  width: 50px;
+}
+
+.widget-container-full img {
+  height: auto;
+  width: 90%;
+}
+
+.widget-container-half img[src="images/bar-graph-placeholder.jpg"] {
+  height: 200px;
+  width: auto;
+}
+
+.widget-container-half img[src="images/pie-chart-placeholder.jpg"] {
+  height: 200px;
+  width: 350px;
+}
+
+.widget-container-full,
+.widget-container-half {
+  width: 95vw;
+}
+
+/* Media Queries --------------------------*/
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:
+      "header header"
+      "main-nav main-content";
+  }
+
+  .main-content {
+    grid-template-columns: 50%;
+  }
+
+  .traffic,
+  .social {
+    grid-column: 1 / span 2;
+  }
+
+  .daily,
+  .members,
+  .message {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile,
+  .activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
+
+  .widget-container-full {
+    width: 90vw;
+  }
+
+  .widget-container-half {
+    width: 45vw;
+  }
 }
