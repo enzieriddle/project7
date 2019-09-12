@@ -9,7 +9,6 @@ ul {
 }
 
 img {
-  background-color: #ffdede;
   height: 50px;
 }
 
@@ -17,8 +16,21 @@ img {
 header {
   background-color: #ffb5b5;
   display: grid;
+  grid-template-columns: 3fr;
   grid-template-areas: "h1 bell-div main-profile-image profile-name";
 }
+
+/* .bell-div img {
+  float: right;
+}
+
+.main-profile-image img {
+  float: right;
+}
+
+.main-profile-name h3 {
+  float: right;
+} */
 
 h1 {
   grid-area: h1;
@@ -69,6 +81,7 @@ ul li {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
+  grid-gap: 15px;
   grid-template-areas:
     "header"
     "main-nav"
