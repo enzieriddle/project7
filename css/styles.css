@@ -51,7 +51,9 @@ img[src="images/pusheen.jpg"] {
 /* Dashboard Grid --------------------------*/
 .main-content-header {
   display: grid;
-  grid-template-areas: "headline main-header-search";
+  grid-template-areas:
+    "headline main-header-search"
+    "alert alert";
 }
 
 .headline {
@@ -60,6 +62,10 @@ img[src="images/pusheen.jpg"] {
 
 .main-header-search {
   grid-area: main-header-search;
+}
+
+.alert {
+  grid-area: alert;
 }
 
 /* Traffic Header Grid --------------------------*/
@@ -123,7 +129,9 @@ header {
   }
 
   .main-content {
+    display: grid;
     grid-template-columns: 50%;
+    grid-template-areas: "main-content-header main-content-header";
   }
 
   .traffic,
@@ -149,6 +157,24 @@ header {
 
   .widget-container-half {
     width: 45vw;
+  }
+
+  /* Main Content Grid --------------------------*/
+  .main-content-header {
+    display: grid;
+    grid-area: main-content-header;
+    grid-template-columns: 1.7fr 0.3fr;
+    grid-template-areas:
+      "headline main-header-search"
+      "alert alert";
+  }
+
+  .headline {
+    grid-area: headline;
+  }
+
+  .main-header-search {
+    grid-area: main-header-search;
   }
 
   /* Chart Grid --------------------------*/
