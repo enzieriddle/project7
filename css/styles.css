@@ -1,10 +1,7 @@
 /* Main Styles --------------------------*/
 * {
   box-sizing: border-box;
-}
-
-header {
-  background-color: #ffb5b5;
+  font-family: "Lato", sans-serif;
 }
 
 ul {
@@ -14,6 +11,57 @@ ul {
 img {
   background-color: #ffdede;
   height: 50px;
+}
+
+/* Header Grid --------------------------*/
+header {
+  background-color: #ffb5b5;
+  display: grid;
+  grid-template-areas: "h1 bell-div main-profile-image profile-name";
+}
+
+h1 {
+  grid-area: h1;
+}
+
+.bell-div {
+  grid-area: bell-div;
+}
+
+img[src="images/pusheen.jpg"] {
+  grid-area: main-profile-image;
+}
+
+.profile-name {
+  grid-area: profile-name;
+}
+
+/* Dashboard Grid --------------------------*/
+.main-content-header {
+  display: grid;
+  grid-template-areas: "headline main-header-search";
+}
+
+.headline {
+  grid-area: headline;
+}
+
+.main-header-search {
+  grid-area: main-header-search;
+}
+
+/* Traffic Header Grid --------------------------*/
+.traffic-header {
+  display: grid;
+  grid-template-areas: "traffic-header-h3 traffic-header-ul";
+}
+
+.traffic-header h3 {
+  grid-area: traffic-header-h3;
+}
+
+ul li {
+  display: inline;
 }
 
 /* Grid Area --------------------------*/
@@ -31,19 +79,15 @@ header {
   grid-area: header;
 }
 
-.social-container {
-  background-color: #ffe8e8;
-}
-
 .main-nav {
   grid-area: main-nav;
-  background-color: #ffc4c4;
+  background-color: #ffdede;
 }
 
 .main-content {
   display: grid;
   grid-area: main-content;
-  background-color: #ffd9d9;
+  background-color: #fff7f7;
 }
 
 .social-image {
@@ -84,8 +128,82 @@ header {
     grid-template-columns: 50%;
   }
 
+  /* Chart Grid --------------------------*/
+  .daily {
+    display: grid;
+    grid-template-areas: "daily-chart mobile-chart";
+  }
+
+  #traffic-chart {
+    grid-area: traffic-chart;
+  }
+
+  #daily-chart {
+    grid-area: daily-chart;
+  }
+
+  #mobile-chart {
+    grid-area: mobile-chart;
+  }
+
+  /* Social Grid --------------------------*/
+  .social-container {
+    display: grid;
+    grid-template-areas: "social-image social-text";
+  }
+
+  .social-image {
+    grid-area: social-image;
+  }
+
+  .social-text {
+    grid-area: social-text;
+  }
+
+  /* Members Grid --------------------------*/
+  .members-container {
+    display: grid;
+    grid-template-areas:
+      "profile-image members-text members-container-p"
+      "profile-image members-text members-container-p";
+  }
+
+  .profile-image {
+    grid-area: profile-image;
+  }
+
+  .members-text {
+    grid-area: members-text;
+  }
+
+  .members-container p {
+    grid-area: members-container-p;
+  }
+
+  /* Message Grid --------------------------*/
+  .widget-container {
+    display: grid;
+    grid-template-columns: 0.8fr;
+    grid-template-areas:
+      "form-field"
+      "form-area"
+      "button-primary";
+  }
+
+  .form-field {
+    grid-area: form-field;
+  }
+
+  .form-area {
+    grid-area: form-area;
+  }
+
+  .button-primary {
+    grid-area: button-primary;
+  }
+
   .traffic,
-  .social {
+  .social-container {
     grid-column: 1 / span 2;
   }
 
