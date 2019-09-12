@@ -95,21 +95,6 @@ header {
   width: 50px;
 }
 
-.widget-container-full img {
-  height: auto;
-  width: 90%;
-}
-
-.widget-container-half img[src="images/bar-graph-placeholder.jpg"] {
-  height: 200px;
-  width: auto;
-}
-
-.widget-container-half img[src="images/pie-chart-placeholder.jpg"] {
-  height: 200px;
-  width: 350px;
-}
-
 .widget-container-full,
 .widget-container-half {
   width: 95vw;
@@ -126,6 +111,31 @@ header {
 
   .main-content {
     grid-template-columns: 50%;
+  }
+
+  .traffic,
+  .social-container {
+    grid-column: 1 / span 2;
+  }
+
+  .daily,
+  .members,
+  .message {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile,
+  .activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
+
+  .widget-container-full {
+    width: 90vw;
+  }
+
+  .widget-container-half {
+    width: 45vw;
   }
 
   /* Chart Grid --------------------------*/
@@ -147,6 +157,7 @@ header {
   }
 
   /* Social Grid --------------------------*/
+  /* Make text appear next to social image. */
   .social-container {
     display: grid;
     grid-template-areas: "social-image social-text";
@@ -200,30 +211,5 @@ header {
 
   .button-primary {
     grid-area: button-primary;
-  }
-
-  .traffic,
-  .social-container {
-    grid-column: 1 / span 2;
-  }
-
-  .daily,
-  .members,
-  .message {
-    grid-column: 1 / span 1;
-  }
-
-  .mobile,
-  .activity,
-  .settings {
-    grid-column: 2 / span 1;
-  }
-
-  .widget-container-full {
-    width: 90vw;
-  }
-
-  .widget-container-half {
-    width: 45vw;
   }
 }
