@@ -191,6 +191,44 @@ header {
     grid-area: members-container-p;
   }
 
+  /* Recent Activity Text Grid --------------------------*/
+  .activity-text {
+    display: grid;
+    grid-template-areas:
+      "activity-name activity-p"
+      "activity-time activity-time";
+  }
+
+  .activity-name {
+    grid-area: activity-name;
+  }
+
+  .activity-p {
+    grid-area: activity-p;
+  }
+
+  .activity-time {
+    grid-area: activity-time;
+  }
+
+  /* Recent Activity Grid --------------------------*/
+  .activity-container {
+    display: grid;
+    grid-template-areas: "activity-image activity-text activity-arrow";
+  }
+
+  .activity-image {
+    grid-area: activity-image;
+  }
+
+  .activity-text {
+    grid-area: activity-text;
+  }
+
+  .activity-arrow {
+    grid-area: activity-arrow;
+  }
+
   /* Message Grid --------------------------*/
   .widget-container {
     display: grid;
