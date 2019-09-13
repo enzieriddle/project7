@@ -20,18 +20,6 @@ header {
   grid-template-areas: "h1 bell-div main-profile-image profile-name";
 }
 
-/* .bell-div img {
-  float: right;
-}
-
-.main-profile-image img {
-  float: right;
-}
-
-.main-profile-name h3 {
-  float: right;
-} */
-
 h1 {
   grid-area: h1;
 }
@@ -87,7 +75,7 @@ ul li {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
-  grid-gap: 15px;
+  grid-gap: 5px;
   grid-template-areas:
     "header"
     "main-nav"
@@ -122,7 +110,7 @@ header {
 /* Media Queries --------------------------*/
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: 55px 1fr;
+    grid-template: 55px minmax(500px, 1fr) / 50px minmax(500px, 1fr);
     grid-template-areas:
       "header header"
       "main-nav main-content";
