@@ -283,11 +283,16 @@ header {
   }
 
   /* Members Grid --------------------------*/
+  .members {
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+  }
   .members-container {
     display: grid;
+    grid-template-columns: 60px 1fr 1fr;
     grid-template-areas:
-      "profile-image members-text members-container-p"
-      "profile-image members-text members-container-p";
+      "profile-image members-text members-date"
+      "profile-image members-text members-date";
   }
 
   .profile-image {
@@ -298,8 +303,19 @@ header {
     grid-area: members-text;
   }
 
-  .members-container p {
-    grid-area: members-container-p;
+  .members-text p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .members-text a {
+    font-size: 0.8rem;
+  }
+
+  .members-date p {
+    grid-area: members-date;
+    font-size: 0.8rem;
+    float: right;
   }
 
   /* Recent Activity Text Grid --------------------------*/
