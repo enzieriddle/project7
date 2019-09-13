@@ -30,6 +30,7 @@ h1 {
 
 img[src="images/pusheen.jpg"] {
   grid-area: main-profile-image;
+  border-radius: 50%;
 }
 
 .profile-name {
@@ -59,15 +60,18 @@ img[src="images/pusheen.jpg"] {
 /* Traffic Header Grid --------------------------*/
 .traffic-header {
   display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
   grid-template-areas: "traffic-header-h3 traffic-header-ul";
 }
 
 .traffic-header h3 {
   grid-area: traffic-header-h3;
+  margin-left: 0.6em;
 }
 
 ul li {
   display: inline;
+  padding-left: 0.3em;
 }
 
 /* Grid Area --------------------------*/
@@ -109,8 +113,80 @@ header {
 
 /* Media Queries --------------------------*/
 @media (min-width: 768px) {
+  /* Styles --------------------------*/
+  .main-profile-image {
+    margin-left: 1em;
+    margin-right: 0.5em;
+    margin-top: 0.3em;
+  }
+
+  .main-profile-name {
+    padding-right: 0.8em;
+  }
+
+  .profile-image,
+  .activity-image {
+    border-radius: 50%;
+  }
+
+  .bell-div {
+    padding-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border-right: 2px solid #ff9494;
+    border-radius: 3px;
+  }
+
+  .bell-div img {
+    height: 30px;
+  }
+
+  nav img[src="icons/icon-dashboard.svg"] {
+    margin-top: 0.4em;
+  }
+
+  nav img {
+    width: 40px;
+    margin-bottom: 1.5em;
+    margin-left: 0.35em;
+  }
+
+  .headline {
+    margin-left: 0.6em;
+  }
+
+  .main-header-search {
+    margin-top: 1.5em;
+    margin-right: 1em;
+  }
+
+  .alert {
+    background-color: #ffb5b5;
+    border-radius: 6px;
+    height: 35px;
+  }
+
+  .alert-banner {
+    display: grid;
+    grid-template-columns: 1.9fr 0.1fr;
+    grid-template-areas: "alert-message alert-banner-close";
+  }
+
+  .alert-message {
+    grid-area: alert-message;
+    font-size: 0.9rem;
+    margin-left: 1em;
+    margin-top: 0.7em;
+  }
+
+  .alert-banner-close {
+    grid-area: alert-banner-close;
+    margin-top: 0.5em;
+  }
+
+  /* Grid Container --------------------------*/
   .grid-container {
-    grid-template: 55px minmax(500px, 1fr) / 50px minmax(500px, 1fr);
+    grid-template: 65px minmax(500px, 1fr) / 50px minmax(500px, 1fr);
     grid-template-areas:
       "header header"
       "main-nav main-content";
@@ -140,6 +216,7 @@ header {
   }
 
   .widget-container-full {
+    margin: 0 auto;
     width: 90vw;
   }
 
