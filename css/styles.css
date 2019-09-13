@@ -184,6 +184,13 @@ header {
     margin-top: 0.5em;
   }
 
+  .social-image {
+    background-color: #d1a7a7;
+    padding: 0.6em;
+    border: 3px solid #d1a7a7;
+    border-radius: 50%;
+  }
+
   /* Grid Container --------------------------*/
   .grid-container {
     grid-template: 65px minmax(500px, 1fr) / 50px minmax(500px, 1fr);
