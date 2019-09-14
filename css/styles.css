@@ -24,10 +24,6 @@ h1 {
   grid-area: h1;
 }
 
-.bell-div {
-  grid-area: bell-div;
-}
-
 img[src="images/pusheen.jpg"] {
   grid-area: main-profile-image;
   border-radius: 50%;
@@ -98,7 +94,7 @@ header {
 .main-content {
   display: grid;
   grid-area: main-content;
-  background-color: #fff7f7;
+  background-color: white;
 }
 
 .social-image {
@@ -130,6 +126,7 @@ header {
   }
 
   .bell-div {
+    grid-area: bell-div;
     padding-right: 1em;
     margin-top: 1em;
     margin-bottom: 2em;
@@ -156,6 +153,7 @@ header {
   }
 
   .main-header-search {
+    grid-area: main-header-search;
     margin-top: 1.5em;
     margin-right: 1em;
   }
@@ -164,6 +162,7 @@ header {
     background-color: #ffb5b5;
     border-radius: 6px;
     height: 35px;
+    margin-right: 1em;
   }
 
   .alert-banner {
@@ -184,13 +183,6 @@ header {
     margin-top: 0.5em;
   }
 
-  .social-image {
-    background-color: #d1a7a7;
-    padding: 0.6em;
-    border: 3px solid #d1a7a7;
-    border-radius: 50%;
-  }
-
   /* Grid Container --------------------------*/
   .grid-container {
     grid-template: 65px minmax(500px, 1fr) / 50px minmax(500px, 1fr);
@@ -206,7 +198,7 @@ header {
   }
 
   .traffic,
-  .social-container {
+  .social {
     grid-column: 1 / span 2;
   }
 
@@ -241,14 +233,6 @@ header {
       "alert alert";
   }
 
-  .headline {
-    grid-area: headline;
-  }
-
-  .main-header-search {
-    grid-area: main-header-search;
-  }
-
   /* Chart Grid --------------------------*/
   .daily {
     display: grid;
@@ -268,18 +252,73 @@ header {
   }
 
   /* Social Grid --------------------------*/
+  /* Align social containers next to each other. */
+  .social {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "social-header . ."
+      "twitter facebook google";
+  }
+
+  .social-header {
+    grid-area: social-header;
+  }
+
+  .twitter {
+    grid-area: twitter;
+    margin-right: 1em;
+  }
+
+  .facebook {
+    grid-area: facebook;
+  }
+
+  .google {
+    grid-area: google;
+  }
+
+  .twitter,
+  .facebook,
+  .google {
+    margin: 0 auto;
+  }
+
   /* Make text appear next to social image. */
   .social-container {
     display: grid;
+    padding: 0.3em 2em;
+    grid-template-columns: 70px 70px;
     grid-template-areas: "social-image social-text";
+    border: 2px solid #d1a7a7;
+    border-radius: 3px;
   }
 
   .social-image {
+    background-color: #d1a7a7;
+    position: relative;
+    border-radius: 50%;
+    padding: 0.7em;
     grid-area: social-image;
+    width: 70px;
+    height: 70px;
   }
 
   .social-text {
     grid-area: social-text;
+    margin: 0 auto;
+  }
+
+  .social-name {
+    margin: 0 auto;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #d1a7a7;
+  }
+
+  .social-value {
+    font-size: 1.4rem;
+    margin: 0 auto;
   }
 
   /* Members Grid --------------------------*/
@@ -321,6 +360,32 @@ header {
   /* Recent Activity Text Grid --------------------------*/
   .activity-text {
     display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-areas:
+      "activity-name activity-p"
+      "activity-time activity-time";
+  }
+
+  .activity-name {
+    grid-area: activity-name;
+    font-size: 0.8rem;
+  }
+
+  .activity-p {
+    grid-area: activity-p;
+    font-size: 0.8rem;
+  }
+
+  .activity-time {
+    grid-area: activity-time;
+    font-size: 0.8rem;
+  }
+
+  /* Recent Activity Grid --------------------------*/
+  /* Make text line up next to each other --------------------------*/
+  .activity-text {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
     grid-template-areas:
       "activity-name activity-p"
       "activity-time activity-time";
@@ -333,12 +398,11 @@ header {
   .activity-p {
     grid-area: activity-p;
   }
-
   .activity-time {
     grid-area: activity-time;
   }
 
-  /* Recent Activity Grid --------------------------*/
+  /* Make image and text line up next to each other --------------------------*/
   .activity-container {
     display: grid;
     grid-template-areas: "activity-image activity-text activity-arrow";
