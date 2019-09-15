@@ -287,8 +287,8 @@ header {
   /* Make text appear next to social image. */
   .social-container {
     display: grid;
-    padding: 0.3em 2em;
-    grid-template-columns: 70px 70px;
+    padding: 0.3em 1.5em;
+    grid-template-columns: 100px 70px;
     grid-template-areas: "social-image social-text";
     border: 2px solid #d1a7a7;
     border-radius: 3px;
@@ -306,7 +306,7 @@ header {
 
   .social-text {
     grid-area: social-text;
-    margin: 0 auto;
+    margin-top: 0.5em;
   }
 
   .social-name {
@@ -441,4 +441,15 @@ header {
   .button-primary {
     grid-area: button-primary;
   }
+}
+
+/* Settings --------------------------*/
+span,
+p {
+  display: inline-block;
+}
+
+.email-text,
+.public-text {
+  display: inline-block;
 }
