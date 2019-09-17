@@ -228,6 +228,7 @@ header {
 
   .widget-container-half {
     width: 45vw;
+    margin-left: 1.5em;
   }
 
   /* Main Content Grid --------------------------*/
@@ -331,8 +332,7 @@ header {
 
   /* Members Grid --------------------------*/
   .members {
-    margin-right: 1.5em;
-    margin-left: 1.5em;
+    margin: 0 auto;
   }
   .members-container {
     display: grid;
@@ -368,11 +368,13 @@ header {
 
   /* Recent Activity Text Grid --------------------------*/
   /* Make text line up next to each other --------------------------*/
-
+  .recent-activity {
+    margin: 0 auto;
+  }
   .activity-text {
     display: grid;
-    grid-template-columns: "autofit";
-    grid-template-rows: 35px;
+    grid-template-rows: 25px;
+    grid-template-columns: auto;
     grid-template-areas:
       "activity-name activity-p"
       "activity-time activity-time";
@@ -396,7 +398,7 @@ header {
   /* Make image and text line up next to each other --------------------------*/
   .activity-container {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 0.3fr;
+    grid-template-columns: 60px 350px 20px;
     grid-template-rows: 70px;
     grid-template-areas: "activity-image activity-text activity-arrow";
   }
@@ -407,7 +409,6 @@ header {
 
   .activity-text {
     grid-area: activity-text;
-    padding: 0;
   }
 
   .activity-arrow {
@@ -461,4 +462,12 @@ header {
 
 .settings-button {
   margin-bottom: 3em;
+}
+
+.widget-container-half,
+.members,
+.recent-activity,
+.message,
+.settings {
+  border: solid 2px #fff5f9;
 }
