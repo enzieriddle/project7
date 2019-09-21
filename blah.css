@@ -12,11 +12,6 @@ img {
   height: 50px;
 }
 
-.profile-image,
-.activity-image {
-  border-radius: 50%;
-}
-
 /* Header --------------------------*/
 header {
   background-color: #ffb5b5;
@@ -397,7 +392,6 @@ button {
 
 .form-area {
   grid-area: form-area;
-  height: 100px;
   margin-bottom: 1em;
 }
 
@@ -443,7 +437,8 @@ button {
   display: inline-block;
 }
 
-.settings-button button {
+.button-primary,
+.button-disabled {
   display: inline;
   width: 45%;
 }
@@ -459,6 +454,41 @@ button {
 /* Media Queries --------------------------*/
 @media (min-width: 768px) {
   /* Styles --------------------------*/
+  header {
+    background-color: #ffb5b5;
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-template-areas: "h1 bell-div main-profile-image profile-name";
+  }
+
+  .main-profile-image {
+    margin-left: 1em;
+    margin-right: 0.5em;
+    margin-top: 0.3em;
+  }
+
+  .main-profile-name {
+    padding-right: 0.8em;
+  }
+
+  .profile-image,
+  .activity-image {
+    border-radius: 50%;
+  }
+
+  .bell-div {
+    grid-area: bell-div;
+    padding-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border-right: 2px solid #ff9494;
+    border-radius: 3px;
+  }
+
+  .bell-div img {
+    height: 30px;
+  }
+
   nav img[src="icons/icon-dashboard.svg"] {
     margin-top: 0.4em;
   }
@@ -470,11 +500,17 @@ button {
   }
 
   .alert {
-    /* background-color: #ffb5b5; */
+    background-color: #ffb5b5;
     border-radius: 6px;
     height: 35px;
     margin-left: 1em;
     margin-right: 3.5em;
+  }
+
+  .alert-banner {
+    display: grid;
+    grid-template-columns: 1.9fr 0.1fr;
+    grid-template-areas: "alert-message alert-banner-close";
   }
 
   .alert-message {
@@ -544,6 +580,10 @@ button {
     margin-left: 1.5em;
   }
 
+  /* .daily-traffic {
+    margin-left: 1em;
+  } */
+
   /* Main Content Grid --------------------------*/
   .main-content-header {
     display: grid;
@@ -575,28 +615,214 @@ button {
   /* Social Grid --------------------------*/
   /* Align social containers next to each other. */
   .social {
-    /* display: grid; */
+    display: grid;
     margin-bottom: 2em;
+    grid-template-areas:
+      "social-header . ."
+      "twitter facebook google";
+  }
+
+  .social-header {
+    grid-area: social-header;
+  }
+
+  .twitter {
+    grid-area: twitter;
+  }
+
+  .facebook {
+    grid-area: facebook;
+  }
+
+  .google {
+    grid-area: google;
+  }
+
+  /* Make text appear next to social image. */
+  .social-container {
+    display: grid;
+    /* padding: 0.5em 3em; */
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "social-image social-text";
+    border: 2px solid #d1a7a7;
+    border-radius: 3px;
+    background-color: #fffafa;
+  }
+
+  .social-image {
+    background-color: #d1a7a7;
+    position: relative;
+    border-radius: 50%;
+    padding: 0.7em;
+    grid-area: social-image;
+    width: 90px;
+    height: 90px;
   }
 
   .social-text {
+    grid-area: social-text;
     margin-top: 0.7em;
   }
 
   .social-name {
+    margin: 0 auto;
     font-size: 1.3rem;
+    font-weight: bold;
+    color: #d1a7a7;
   }
 
   .social-value {
     font-size: 2.2rem;
+    margin: 0 auto;
   }
 
-  /* Message --------------------------*/
+  /* Members Grid --------------------------*/
+  .members {
+    padding-left: 2em;
+    padding-right: 1em;
+  }
+  .members-container {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    grid-template-rows: 70px;
+    grid-template-areas:
+      "profile-image members-text members-date"
+      "profile-image members-text members-date";
+  }
+
+  .profile-image {
+    grid-area: profile-image;
+  }
+
+  .members-text {
+    grid-area: members-text;
+  }
+
+  .members-text p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .members-text a {
+    font-size: 0.8rem;
+  }
+
+  .members-date p {
+    grid-area: members-date;
+    font-size: 0.8rem;
+    float: right;
+  }
+
+  /* Recent Activity Text Grid --------------------------*/
+  /* Make text line up next to each other --------------------------*/
+  .recent-activity {
+    padding-left: 2em;
+  }
+  .activity-text {
+    display: grid;
+    grid-template-rows: 25px;
+    grid-template-areas:
+      "activity-name activity-p"
+      "activity-time activity-time";
+  }
+
+  .activity-name {
+    grid-area: activity-name;
+  }
+
+  .activity-p {
+    grid-area: activity-p;
+  }
+
+  .activity-time {
+    grid-area: activity-time;
+  }
+
+  /* Make image and text line up next to each other --------------------------*/
+  .activity-container {
+    display: grid;
+    grid-template-areas: "activity-image activity-text activity-arrow";
+  }
+
+  .activity-image {
+    grid-area: activity-image;
+  }
+
+  .activity-text {
+    grid-area: activity-text;
+  }
+
+  .activity-arrow {
+    grid-area: activity-arrow;
+  }
+
+  .activity-arrow span {
+    font-size: 2.3rem;
+    font-weight: bolder;
+    color: #d1a7a7;
+  }
+
+  /* Message Grid --------------------------*/
   button {
+    color: white;
+    font-weight: bolder;
+    background-color: #d1a7a7;
+    border: none;
     border-radius: 4px;
   }
 
+  .widget-container {
+    display: grid;
+    grid-template-areas:
+      "form-field"
+      "form-area"
+      "button-primary";
+  }
+
+  .form-field {
+    grid-area: form-field;
+    margin-bottom: 1em;
+  }
+
   .form-area {
+    grid-area: form-area;
+    margin-bottom: 1em;
     height: 113px;
+  }
+
+  .button-primary {
+    grid-area: button-primary;
+  }
+
+  /* Settings --------------------------*/
+  .settings h3 {
+    margin-bottom: 0;
+  }
+
+  .email-text {
+    margin-right: 2em;
+  }
+
+  .public-text {
+    margin-right: 4em;
+  }
+
+  #timezone {
+    height: 30px;
+    margin-top: 2.6em;
+  }
+
+  .switch-material.switch-light > span,
+  .email-text,
+  .public-text {
+    display: inline-block;
+  }
+
+  .widget-container-half,
+  .members,
+  .recent-activity,
+  .message,
+  .settings {
+    border: solid 2px #fff5f9;
   }
 }
