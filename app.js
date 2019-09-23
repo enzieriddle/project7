@@ -1,7 +1,7 @@
 /* Alert Message --------------------------*/
-const alert = document.getElementById("alert");
+const alertBox = document.getElementById("alert");
 
-alert.innerHTML = `
+alertBox.innerHTML = `
   <div class="alert-banner">
     <p class="alert-message"><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
     to complete</p>
@@ -9,10 +9,10 @@ alert.innerHTML = `
   </div>
   `;
 
-alert.addEventListener("click", e => {
+alertBox.addEventListener("click", e => {
   const element = e.target;
   if (element.classList.contains("alert-banner-close")) {
-    alert.style.display = "none";
+    alertBox.style.display = "none";
   }
 });
 
@@ -137,13 +137,16 @@ const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
-send.addEventListener("click", () => {
+send.addEventListener("click", e => {
   if (user.value === "" && message.value === "") {
     alert("Required fields: User and Message");
+    e.preventDefault();
   } else if (user.value === "") {
     alert("Required field: User");
+    e.preventDefault();
   } else if (message.value === "") {
     alert("Required field: Message");
+    e.preventDefault();
   } else {
     alert(`Message send successfully to ${user.value}`);
   }
