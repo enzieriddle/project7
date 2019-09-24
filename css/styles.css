@@ -31,6 +31,8 @@ h1 {
 }
 
 .bell-div {
+  display: flex;
+  justify-content: flex-start;
   grid-area: bell-div;
   padding-right: 1em;
   margin-top: 1em;
@@ -43,11 +45,20 @@ h1 {
   height: 30px;
 }
 
-.bell-div img:hover {
+.bell-div img:hover,
+.dot:hover {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  background-color: #8ceddb;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 @keyframes shake {
